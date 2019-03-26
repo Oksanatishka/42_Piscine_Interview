@@ -1,2 +1,26 @@
-Day 00
+================================================================================================================
+================================================ Day 00 ========================================================
+================================================================================================================
+readFile
 
+// fopen(const char *filename, const char *mode) opens the filename pointed to, by filename using the given mode.  
+  mode: r, w, a, r+, w+, a+
+// fseek(FILE *pointer, long int offset, int position) is used to move file pointer associated with a given file to a specific position.
+  pointer: pointer to a FILE object that identifies the stream.
+  offset: number of bytes to offset from position
+  position: position from where offset is added. Values:
+    SEEK_END : It denotes end of the file.
+    SEEK_SET : It denotes starting of the file.
+    SEEK_CUR : It denotes file pointer’s current position.
+// ftell(FILE *stream) returns the current file position of the given stream.
+// rewind(FILE *stream) sets the file position to the beginning of the file of the given stream.
+// fread(void *ptr, size_t size, size_t nmemb, FILE *stream) reads data from the given stream into the array pointed to, by ptr.
+// fclose(FILE *stream) closes the stream. All buffers are flushed.
+
+------------------------------------------
+// dprintf(int fd, const char *format, ...) - print to a file descriptor
+  The following symbolic constants shall be defined for file streams:
+    STDERR_FILENO     File number of stderr; 2.
+    STDIN_FILENO      File number of stdin; 0.
+    STDOUT_FILENO     File number of stdout; 1.
+    
