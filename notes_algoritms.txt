@@ -1,0 +1,443 @@
+======================== Analysis of Algorithms ======================== 
+1. ASYMPTOTIC ANALYSIS is the big idea that handles above issues in analyzing algorithms. 
+In Asymptotic Analysis, we evaluate the performance of an algorithm in terms of input size 
+(we don’t measure the actual running time). We calculate, how does the time (or space) taken by 
+an algorithm increases with the input size.
+
+The following 3 ASYMPTOTIC NOTATIONS are mostly used to represent time complexity of algorithms:
+    1) Θ Notation: The theta notation bounds a functions from above and below, 
+                    so it defines exact asymptotic behavior.
+    2) Big O Notation: The Big O notation defines an upper bound of an algorithm, 
+                        it bounds a function only from above. 
+                        // O – означает верхнее ограничение сложности алгоритма.
+    3) Ω Notation: Just as Big O notation provides an asymptotic upper bound on a function, 
+                    Ω notation provides an asymptotic lower bound.
+    4) There are two more notations called little o and little omega. 
+        Little o provides strict upper bound (equality condition is removed from Big O) and 
+        little omega provides strict lower bound (equality condition removed from big omega).
+
+analysis of iterative programs
+O(1): Time complexity of a function (or set of statements) is considered as O(1) if it doesn’t contain loop, 
+        recursion and call to any other non-constant time function.
+        e.g. swap f-n
+O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount. 
+        for (int i = 1; i <= n; i += c) {  
+            // some O(1) expressions
+        }
+O(n^c): Time complexity of nested loops is equal to the number of times the innermost statement is executed. 
+        for (int i = 1; i <=n; i += c) {
+            for (int j = 1; j <=n; j += c) {
+                // some O(1) expressions
+            }
+        }
+O(Logn) Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+        e.g. Binary Search      1, c, c^2, c^3, … c^k
+        for (int i = 1; i <=n; i *= c) {
+            // some O(1) expressions
+        }
+O(LogLogn) Time Complexity of a loop is considered as O(LogLogn) if the loop variables is reduced / increased exponentially by a constant amount.
+        // Here c is a constant greater than 1   
+        for (int i = 2; i <=n; i = pow(i, c)) { 
+            // some O(1) expressions
+        }
+
+How to combine time complexities of consecutive loops?
+When there are consecutive loops, we calculate time complexity as sum of time complexities of individual loops.
+   for (int i = 1; i <=m; i += c) {  
+        // some O(1) expressions
+   }
+   for (int i = 1; i <=n; i += c) {
+        // some O(1) expressions
+   }
+   Time complexity of above code is O(m) + O(n) which is O(m+n)
+   If m == n, the time complexity becomes O(2n) which is O(n).
+
+2. Amortized Analysis is used for algorithms where an occasional operation is very slow, but most of the other 
+operations are faster. In Amortized Analysis, we analyze a sequence of operations and guarantee a worst 
+case average time which is lower than the worst case time of a particular expensive operation.
+
+-----------------
+Auxiliary Space is the extra space or temporary space used by an algorithm.
+Space Complexity of an algorithm is total space taken by the algorithm with respect to the input size. 
+Space complexity includes both Auxiliary space and space used by input.
+
+
+======================== Парадигмы программирования  ========================
+> Основные модели программирования
+    Императивное программирование   
+        (англ. imperative — приказ, повелительное наклонение)
+        в исходном коде программы записываются инструкции (команды), которые выполняться последовательно;
+        данные, полученные при выполнении инструкции, могут записываться в память.
+    Декларативное программирование
+        задаётся спецификация решения задачи, то есть описывается, что представляет собой проблема и ожидаемый 
+        результат. Противоположностью декларативного является императивное программирование, описывающее на том 
+        или ином уровне детализации, как решить задачу и представить результат.
+    Структурное программирование
+        представление программы в виде иерархической структуры блоков. 
+        любая программа строится без использования оператора goto из трёх базовых управляющих структур: 
+        последовательность, ветвление, цикл; кроме того, используются подпрограммы.
+
+        последовательность — обозначается: f THEN g,    // сначала выполняется программа f, затем выполняется программа g.
+        ветвление — обозначается: IF p THEN f ELSE g,
+        цикл — обозначается: WHILE p DO f,
+        где f, g — блок-схемы с одним входом и одним выходом,
+        р — условие,
+        THEN, IF, ELSE, WHILE, DO — ключевые слова.
+
+        Структурное программирование призвано, в частности, устранить беспорядок и ошибки в программах, вызванные 
+        трудностями чтения кода, несистематизированным, неудобным для восприятия и анализа исходным текстом программы. 
+        Спагетти-код — плохо спроектированная, слабо структурированная, запутанная и трудная для понимания программа, 
+        содержащая много операторов goto (особенно переходов назад), исключений и других конструкций, ухудшающих 
+        структурированность. Самый распространённый антипаттерн программирования. Иногда называется «кенгуру-код» 
+        (kangaroo code) из-за множества инструкций jump. Неизбежен рефакторинг — главное лекарство от спагетти.
+    Функциональное программирование
+        вычисление значений функций 
+        Языки: Лисп, Erlang, APL, ML, F#, Scala, Miranda, Nemerle, Haskell, OCaml, R (статистика).  
+        В функциональных языках цикл обычно реализуется в виде рекурсии. Для использования рекурсии может 
+        потребоваться большой стек (абстрактный тип данных, представляющий собой список элементов, организованных по принципу LIFO).
+    Логическое программирование
+        Языки: Planner, Prolog.
+        парадигма программирования, основанная на автоматическом доказательстве теорем, а также раздел дискретной 
+        математики, изучающий принципы логического вывода информации на основе заданных фактов и правил вывода. 
+    Объектно-ориентированное программирование
+        Программирование, основанное на классах         - Класс-ориентированное программирование — это программирование, сфокусированное на данных, причём данные и поведение неразрывно связаны между собой. 
+            Языки: Smalltalk, Ruby
+        Программирование, основанное на прототипах      -  Прототипное программирование, сохранив часть черт ООП, отказалось от базовых понятий — класса и наследования.
+            Языки: Self, JavaScript, Lua, Io, REBOL
+        Субъектно-ориентированное программирование (англ. subject - oriented programming)
+
+        Языки: C++, Java, PHP
+        методология программирования, основанная на представлении программы в виде совокупности объектов, каждый 
+        из которых является экземпляром определённого класса, а классы образуют иерархию наследования.
+
+JavaScript — мультипарадигменный язык программирования.Поддерживает объектно-ориентированный, императивный и функциональный стили.  
+
+> Подходы и приёмы
+    Структурное программирование
+    Процедурное программирование
+        программирование на императивном языке, при котором последовательно выполняемые операторы можно собрать 
+        в подпрограммы, то есть более крупные целостные единицы кода, с помощью механизмов самого языка.
+    Аппликативное программирование
+    Обобщённое программирование
+    Доказательное программирование
+    Порождающее программирование
+    Аспектно-ориентированное программирование
+    Агентно-ориентированное программирование
+    Рекурсия
+    Автоматное программирование
+    Событийно-ориентированное программирование
+    Компонентно-ориентированное программирование
+    Грамотное программирование
+
+======================== Searching Algorithms ========================
+1) Linear Search, O(n)
+Linear search is rarely used practically because other search algorithms such as the binary search algorithm 
+and hash tables allow significantly faster searching comparison to Linear search.
+    int search(int arr[], int n, int x) { 
+        int i; 
+        for (i = 0; i < n; i++) 
+            if (arr[i] == x) 
+                return i; 
+        return -1; 
+    } 
+
+2) Binary Search, (!!! sorted array),  O(Log n)
+    Search a sorted array by repeatedly dividing the search interval in half. 
+
+    Recursive implementation of Binary Search
+    int binarySearch(int arr[], int l, int r, int x) { 
+        if (r >= l) { 
+            int mid = l + (r - l) / 2; 
+            if (arr[mid] == x)      // If the element is present at the middle itself 
+                return mid; 
+            if (arr[mid] > x)       // If element is smaller than mid, then it can only be present in left subarray 
+                return binarySearch(arr, l, mid - 1, x); 
+            return binarySearch(arr, mid + 1, r, x);    // Else the element can only be present in right subarray 
+        } 
+        return -1;                  // We reach here when element is not present in array 
+    } 
+
+    Iterative implementation of Binary Search
+    int binarySearch(int arr[], int l, int r, int x) { 
+        while (l <= r) { 
+            int m = l + (r - l) / 2; 
+            if (arr[m] == x)    // Check if x is present at mid 
+                return m; 
+            if (arr[m] < x)     // If x greater, ignore left half 
+                l = m + 1; 
+            else                // If x is smaller, ignore right half 
+                r = m - 1; 
+        } 
+        return -1;              // if we reach here, then element was not present 
+    } 
+
+3) Jump Search, (!!! sorted array),  O(√n)
+    The time complexity of Jump Search is between Linear Search ( ( O(n) ) and Binary Search ( O (Log n) ).
+    the best step size is m = √n.
+    if step=4, Jump from index 0 to index 4, 4-->8, 8-->12, Since the element 
+    at index 12 is greater than the value we are searching -  we will jump back a step to come to index 9.
+    Perform linear search from index 9 to get the searched element.
+
+    int jumpSearch(int arr[], int x, int n) { 
+        int step = sqrt(n);     // Finding block size to be jumped 
+        int prev = 0;           // Finding the block where element is present (if it is present) 
+        while (arr[min(step, n)-1] < x) { 
+            prev = step; 
+            step += sqrt(n); 
+            if (prev >= n) 
+                return -1; 
+        } 
+        while (arr[prev] < x) {   // Doing a linear search for x in block beginning with prev. 
+            prev++; 
+            if (prev == min(step, n))   // If we reached next block or end of array, element is not present. 
+                return -1; 
+        } 
+        if (arr[prev] == x)     // If element is found 
+            return prev; 
+        return -1; 
+    } 
+
+4) Interpolation Search, (!!! sorted array), O(log log n))
+    The Interpolation Search is an improvement over Binary Search for instances, where the values in a sorted array are uniformly distributed.
+    formula      pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+
+5) Exponential Search, (!!! sorted array), O(Log n)
+    Exponential search involves two steps:
+        Find range where element is present
+        Do Binary Search in above found range.
+    
+    int exponentialSearch(int arr[], int n, int x) { 
+        if (arr[0] == x)    // If x is present at firt location itself 
+            return 0; 
+        int i = 1;          // Find range for binary search by repeated doubling 
+        while (i < n && arr[i] <= x) 
+            i = i*2; 
+        return binarySearch(arr, i/2, min(i, n), x);    //  Call binary search for the found range. 
+    }
+    ...
+
+6) Ternary Search   
+    Binary Search is preferred over Ternary Search.
+
+======================== Sorting Algorithms ========================
+1) Selection Sort, O(n^2)
+    arr[] = 64 25 12 22 11
+    // Find the minimum element in arr[0...4] and place it at beginning
+    11 25 12 22 64
+    // Find the minimum element in arr[1...4] and place it at beginning of arr[1...4]
+    11 12 25 22 64
+    // Find the minimum element in arr[2...4] and place it at beginning of arr[2...4]
+    11 12 22 25 64
+    // Find the minimum element in arr[3...4] and place it at beginning of arr[3...4]
+    11 12 22 25 64
+
+    void selectionSort(int arr[], int n) { 
+        int i, j, min_idx; 
+        for (i = 0; i < n-1; i++) {   // One by one move boundary of unsorted subarray   
+            min_idx = i;            // Find the minimum element in unsorted array 
+            for (j = i+1; j < n; j++) 
+                if (arr[j] < arr[min_idx]) 
+                    min_idx = j; 
+            swap(&arr[min_idx], &arr[i]);   // Swap the found minimum element with the first element 
+        } 
+    } 
+
+2) Bubble Sort, O(n*n)
+    Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+    Algorithm compares the first two elements.
+    First Pass:     ( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ) -> ( 1 4 5 2 8 ) -> ( 1 4 2 5 8 ) -> ( 1 4 2 5 8 )
+    Second Pass:    ( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) -> ( 1 2 4 5 8 ) -> ( 1 2 4 5 8 ) -> ( 1 2 4 5 8 )
+    Third Pass:     ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) -> ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+
+    void bubbleSort(int arr[], int n) { 
+        int i, j; 
+        for (i = 0; i < n-1; i++)       
+            for (j = 0; j < n-i-1; j++) // Last i elements are already in place     
+                if (arr[j] > arr[j+1]) 
+                    swap(&arr[j], &arr[j+1]); 
+    } 
+
+3) Insertion Sort, O(n*2)
+    void insertionSort(int arr[], int n) { 
+        int i, key, j; 
+        for (i = 1; i < n; i++) { 
+            key = arr[i]; 
+            j = i - 1; 
+            while (j >= 0 && arr[j] > key) {    // Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position
+                arr[j + 1] = arr[j]; 
+                j = j - 1; 
+            } 
+            arr[j + 1] = key; 
+        } 
+    } 
+4) Merge Sort, 
+    Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, 
+    calls itself for the two halves and then merges the two sorted halves.
+5) Heap Sort, 
+    Heap sort is a comparison based sorting technique based on Binary Heap data structure.
+6) QuickSort, 
+    Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
+7) Radix Sort, 
+    The idea of Radix Sort is to do digit by digit sort starting from least significant digit to most significant digit. Radix sort uses counting sort as a subroutine to sort.
+8) Counting Sort,
+    Counting sort is a sorting technique based on keys between a specific range. 
+9) Bucket Sort, 
+    Bucket sort is mainly useful when input is uniformly distributed over a range.
+10) ShellSort, 
+    ShellSort is mainly a variation of Insertion Sort.
+11) Comb Sort, 
+    Comb Sort is mainly an improvement over Bubble Sort.
+12) Pigeonhole Sort, 
+    Pigeonhole sorting is a sorting algorithm that is suitable for sorting lists of elements where the number of elements and the number of possible key values are approximately the same.
+13) Cycle Sort
+
+======================== Greedy Algorithms ========================
+// это про ОПТИМАЛЬНОСТЬ
+Жадный алгоритм — алгоритм, заключающийся в принятии локально оптимальных решений на каждом этапе, 
+допуская, что конечное решение также окажется оптимальным. 
+
+Примеры
+
+Задача. Размен монеток
+Монетная система некоторого государства состоит из монет достоинством {\displaystyle a_{1}=1<a_{2}<...<a_{n}} 
+a_{1}=1<a_{2}<...<a_{n}. Требуется выдать сумму {\displaystyle S} S наименьшим возможным количеством монет.
+
+Задача. Выбор заявок
+На конференции, чтобы отвести больше времени на неформальное общение, различные секции разнесли по разным 
+аудиториям. Учёный с чрезвычайно широкими интересами хочет посетить несколько докладов, проходящих в разных 
+секциях. Известно начало {\displaystyle s_{i}} s_{i} и конец {\displaystyle f_{i}} f_{i} каждого доклада. 
+Определить, какое максимальное количество докладов можно посетить.
+
+Following are some standard algorithms that are Greedy algorithms.
+1) Kruskal’s Minimum Spanning Tree (MST)
+2) Prim’s Minimum Spanning Tree
+3) Dijkstra’s Shortest Path
+4) Huffman Coding
+
+
+======================== Dynamic Programming ========================
+// это про ПОДЗАДАЧИ
+Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into 
+subproblems and stores the results of subproblems (memoization) to avoid computing the same results again. 
+
+Динамическое программирование — способ решения сложных задач путём разбиения их на более простые подзадачи. 
+Он применим к задачам с оптимальной подструктурой, выглядящим как набор перекрывающихся подзадач, сложность 
+которых чуть меньше исходной. 
+Как правило, чтобы решить поставленную задачу, требуется решить отдельные части задачи (подзадачи), 
+после чего объединить решения подзадач в одно общее решение. Часто многие из этих подзадач одинаковы. 
+
+Классические задачи динамического программирования
+Задача о наибольшей общей подпоследовательности: даны две последовательности, требуется найти самую длинную общую подпоследовательность.
+Задача поиска наибольшей увеличивающейся подпоследовательности: дана последовательность, требуется найти самую длинную возрастающую подпоследовательность.
+Задача о редакционном расстоянии (расстояние Левенштейна): даны две строки, требуется найти минимальное количество стираний, замен и добавлений символов, преобразующих одну строку в другую.
+Задача о вычислении чисел Фибоначчи
+Задача о порядке перемножения матриц: даны матрицы {\displaystyle A_{1}} A_{1}, …, {\displaystyle A_{n}} A_{n}, требуется минимизировать количество скалярных операций для их перемножения.
+Задача о выборе траектории
+Задача последовательного принятия решения
+Задача об использовании рабочей силы
+Задача управления запасами
+Задача о рюкзаке: из неограниченного множества предметов со свойствами «стоимость» и «вес» требуется отобрать некое число предметов таким образом, чтобы получить максимальную суммарную стоимость при ограниченном суммарном весе.
+Алгоритм Флойда — Уоршелла: найти кратчайшие расстояния между всеми вершинами взвешенного ориентированного графа.
+Алгоритм Беллмана — Форда: найти кратчайший путь во взвешенном графе между двумя заданными вершинами.
+Максимальное независимое множество вершин в дереве: дано дерево, найти максимальное множество вершин, никакие две из которых не связаны ребром.
+
+
+======================== Pattern Searching ========================
+
+Given a text txt[0..n-1] and a pattern pat[0..m-1], write a function search(char pat[], char txt[]) that 
+prints all occurrences of pat[] in txt[]. You may assume that n > m.
+
+Input:  txt[] = "THIS IS A TEST TEXT"
+        pat[] = "TEST"
+Output: Pattern found at index 10
+
+1. Naive Pattern Searching:
+Slide the pattern over text one by one and check for a match. If a match is found, then slides by 1 again to check for subsequent matches.
+
+2. KMP (Knuth Morris Pratt) Pattern Searching
+The basic idea behind KMP’s algorithm is: whenever we detect a mismatch (after some matches), we already know some of the characters in the text of the next window. 
+
+3. Rabin-Karp Algorithm
+
+
+======================== Backtracking ========================
+Поиск с возвратом, бэктрекинг (англ. backtracking) — общий метод нахождения решений задачи, в которой 
+требуется полный перебор всех возможных вариантов в некотором множестве М. Как правило позволяет решать 
+задачи, в которых ставятся вопросы типа: «Перечислите все возможные варианты …», «Сколько существует 
+способов …», «Есть ли способ …», «Существует ли объект…» и т. п.
+
+Классическим примером использования алгоритма поиска с возвратом является задача о восьми ферзях, Sudoku.
+
+
+======================== Divide and Conquer ========================
+
+Разделяй и властвуй (англ. divide and conquer) — важная парадигма разработки алгоритмов, заключающаяся в 
+рекурсивном разбиении решаемой задачи на две или более подзадачи того же типа, но меньшего размера, и 
+комбинировании их решений для получения ответа к исходной задаче; разбиения выполняются до тех пор, 
+пока все подзадачи не окажутся элементарными.
+
+Примеры алгоритмов, в которых применяется парадигма «разделяй и властвуй»:
+    алгоритм сортировки слиянием;
+    двоичный поиск;
+    метод бисекции;
+    быстрая сортировка;
+    быстрое преобразование Фурье;
+    алгоритм Карацубы и другие эффективные алгоритмы для умножения больших чисел.
+
+Steps:
+1. Divide: Break the given problem into subproblems of same type.
+2. Conquer: Recursively solve these subproblems
+3. Combine: Appropriately combine the 
+
+int power(int x, unsigned int y) 
+{ 
+    int temp; 
+    if( y == 0) 
+        return 1; 
+    temp = power(x, y/2); 
+    if (y%2 == 0) 
+        return temp*temp; 
+    else
+        return x*temp*temp; 
+} 
+
+======================== Geometric Algorithms ========================
+алгоритмы для решения геометрических задач
+Рассматриваются задачи как триангуляция, построение выпуклой оболочки, определение принадлежности одного 
+объекта другому, поиск их пересечения и т. п. Оперируют с такими геометрическими объектами как: точка, 
+отрезок, многоугольник, окружность…
+
+Алгоритм сканирования Грэхема — трудоёмкость {\displaystyle O(n\log n)} O(n\log n).
+Алгоритм быстрой оболочки — трудоёмкость {\displaystyle O(n^{2})} O(n^{2}), {\displaystyle O(nlogn)} {\displaystyle O(nlogn)} — в среднем.
+Алгоритм Киркпатрика — построение выпуклой оболочки набора точек на плоскости методом «разделяй и властвуй» через мосты. Трудоёмкость {\displaystyle O(n\log n)} O(n\log n).
+Алгоритм заворачивания подарков (Джарвиса) — трудоёмкость {\displaystyle O(nh)} O(nh), {\displaystyle h} h — количество точек в выпуклой оболочке.
+Алгоритм Чана — трудоёмкость {\displaystyle O(n\log h)} O(n\log h), {\displaystyle h} h — количество точек в выпуклой оболочке.
+Алгоритм точки в многоугольнике — проверка принадлежности данной точки простому многоугольнику {\displaystyle O(n)} O(n).
+Метод луча — принадлежность точки простому многоугольнику {\displaystyle O(n)} O(n).
+Алгоритм Бентли — Оттманна — поиск всех точек пересечения отрезков на плоскости {\displaystyle O((n+k)\log n)} {\displaystyle O((n+k)\log n)}, {\displaystyle k} k — количество точек пересечения.
+
+======================== Mathematical Algorithms ========================
+
+======================== Bit Algorithms ========================
+Би́товая опера́ция — некоторые операции над цепочками битов. 
+Виды операций: 
+    логические побитовые операции (не ~, и &, или |, искл или ^) и 
+    битовые сдвиги (Сдвиг влево <<, Сдвиг вправо  >>). 
+
+======================== Graph Algorithms ========================
+Совокупность алгоритмов упорядочивания данных, направленных на создание иерархии (дерева) вложенных кластеров.
+
+Выделяют два класса методов иерархической кластеризации:
+    Агломеративные методы (англ. agglomerative): новые кластеры создаются путем объединения более мелких кластеров и, таким образом, дерево создается от листьев к стволу;
+    Дивизивные или дивизионные методы (англ. divisive): новые кластеры создаются путем деления более крупных кластеров на более мелкие и, таким образом, дерево создается от ствола к листьям.
+
+Graph is a data structure that consists of following two components:
+1. A finite set of vertices also called as nodes.
+2. A finite set of ordered pair of the form (u, v) called as edge. The pair is ordered because (u, v) is not same as (v, u) in case of a directed graph(di-graph). The pair of the form (u, v) indicates that there is an edge from vertex u to vertex v. The edges may contain weight/value/cost.
+
+Graphs are used 
+    -  to represent networks (paths in a city or telephone network or circuit network)
+    - in social networks like linkedIn, Facebook. 
+
+    
+======================== Randomized Algorithms ========================
