@@ -24,3 +24,10 @@ readFile
     STDIN_FILENO      File number of stdin; 0.
     STDOUT_FILENO     File number of stdout; 1.
     
+
+------------------------------------------
+
+Which is the fastest sorting algorithm?
+The time complexity of Quicksort is O(n log n) in the best case, O(n log n) in the average case, and O(n^2) in the worst case. 
+But because it has the best performance in the average case for most inputs, Quicksort is generally considered the “fastest” sorting algorithm.
+
