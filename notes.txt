@@ -1,6 +1,20 @@
 ================================================================================================================
 ================================================ Day 00 ========================================================
 ================================================================================================================
+Arrays and Strings
+
+Exercises:
+0. search
+1. quickSort
+2. binarySearch
+3. hash table
+4. Rabin-Karp method (find how many times the substring occur in a string)
+5. compress
+6. decompresses the string of characters received as parameters
+7. implement a function, to rotate the picture(a matrix of integer) clockwise
+8. return the word in the dictionnary
+
+------------------------------------------
 readFile
 
 // fopen(const char *filename, const char *mode) opens the filename pointed to, by filename using the given mode.  
@@ -26,8 +40,26 @@ readFile
     
 
 ------------------------------------------
+Time Complexities of all Sorting Algorithms https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/
 
 Which is the fastest sorting algorithm?
 The time complexity of Quicksort is O(n log n) in the best case, O(n log n) in the average case, and O(n^2) in the worst case. 
 But because it has the best performance in the average case for most inputs, Quicksort is generally considered the “fastest” sorting algorithm.
+------------------------------------------
+Hash Table Program in C https://www.tutorialspoint.com/data_structures_algorithms/hash_table_program_in_c.htm
+
+
+================================================================================================================
+================================================ Day 01 ========================================================
+================================================================================================================
+Lists, Stacks and Queues
+
+Exercises:
+0. circular doubly linked list
+1. implement a function that prints all the elements of a linked list in reverse order
+2. implement a stack with methods: stackInit, pop, push (recreate the function printReverse but iteratively)
+3. implement a stack (defined below), but for this time, the "pop" and "push" function must be in O(1) time and O(1) space
+4. implement queue with methods: queueInit(), enqueue(queue, message), dequeue(queue), peek(queue), isEmpty(queue).
+5. implement a tank stack
+6. implement a f-n that returns the n-th elements from the end of a linked list(Your function must go through the list only one time).
 
