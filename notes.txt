@@ -4,11 +4,13 @@
 Arrays and Strings
 
 Exercises:
+--- done ---
 0. search
 1. quickSort
 2. binarySearch
 3. hash table
 4. Rabin-Karp method (find how many times the substring occur in a string)
+--- didn't work on: ---
 5. compress
 6. decompresses the string of characters received as parameters
 7. implement a function, to rotate the picture(a matrix of integer) clockwise
@@ -62,4 +64,103 @@ Exercises:
 4. implement queue with methods: queueInit(), enqueue(queue, message), dequeue(queue), peek(queue), isEmpty(queue).
 5. implement a tank stack
 6. implement a f-n that returns the n-th elements from the end of a linked list(Your function must go through the list only one time).
+7. game: implement a function that returns a copy of the board, with the linked list passed as a parameter.
+8. game
+
+
+================================================================================================================
+================================================ Day 02 ========================================================
+================================================================================================================
+Sort Algorithms
+
+0. sort linked list
+1. insertion Sort
+2. quick Sort
+3. merge sort
+4. count sort
+5. Implement f-n that searches in the array for the value and returns the index
+6. radix sort
+7. modified count sort --> divide and conquer sort
+8. external sort
+9. answer to question which sort algorithm 
+
+================================================================================================================
+================================================ Day 03 ========================================================
+================================================================================================================
+Trees and Graphs
+
+0. binary tree - is it BST? - is it balanced?
+1. balanced BST
+2. n-ary tree -> create a f-n which returns a first common ancestor
+3. create a f-n able to switch a min-heap to a max-heap
+4. create a f-n to insert a new ape in the tree
+5. prefix tree
+
+
+================================================================================================================
+================================================ Day 04 ========================================================
+================================================================================================================
+Bit Manipulation
+
+0. sum of the two binary representation numbers
+1. & | ~ operations
+2. >> << arithmetic shift
+3. ^ xor
+4. vacant/occupied
+5. clearPlace
+6. setPlace
+7. updatePlace
+8. isFilled
+9. occupiedPlaces
+10. carPosition
+11. carPosition using mathematical f-n
+12. clearBits
+13. leftmostCar
+14. rightmostCar
+15. longestSequence
+16. bit array
+17.
+18.
+19.
+20.
+
+================================================================================================================
+================================================ Day 05 ========================================================
+================================================================================================================
+Recursive programming
+
+0.
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+
+================================================================================================================
+================================================ Day 06 ========================================================
+================================================================================================================
+Greedy Algoritms
+
+0.
+1.
+2.
+3.
+4.
+5.
+6.
+
+================================================================================================================
+================================================ Day 07 ========================================================
+================================================================================================================
+Algorithms
+
+0. heap sort
+1. deque data structure 
+2. balanced BST
+3. undirected graph, queue
+4. 
+5.
 
