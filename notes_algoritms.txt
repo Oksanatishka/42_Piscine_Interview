@@ -15,7 +15,13 @@ The following 3 ASYMPTOTIC NOTATIONS are mostly used to represent time complexit
     4) There are two more notations called little o and little omega. 
         Little o provides strict upper bound (equality condition is removed from Big O) and 
         little omega provides strict lower bound (equality condition removed from big omega).
-
+--------------------
+Big-O Complexity 
+Good:       O(log n), O(1)
+Fair:       O(n)
+Bad:        O(n log n)
+Horrible:   O(n^2), O(2^n), O(n!)
+--------------------
 analysis of iterative programs
 O(1): Time complexity of a function (or set of statements) is considered as O(1) if it doesn’t contain loop, 
         recursion and call to any other non-constant time function.
