@@ -38,7 +38,7 @@ int toInt(char *bits)
 {
  	//return (int) strtol(bits, NULL, 2); 
     int res = 0;
-    int d = 32;
+    int d = 32;	// 2^5 = 32
     for (int i = 0;i < 6; i++)
 	{
         res += d * (bits[i] - '0');
