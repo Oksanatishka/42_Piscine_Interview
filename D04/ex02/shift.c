@@ -17,7 +17,9 @@ char *rightShift(char *bin, int k)
 char *leftShift(char *bin, int k)
 {
 	int i = 0;
-	for (i = 0; i + i < 6; i++)
+	// 000011 << 2 doesn't work, output: 001000 (8), should be 001100 (12)
+	// should be i + k not i + i
+	for (i = 0; i + i < 6; i++)	
 		bin[i] = bin[i + k];
 	for (i = 5; i >= 0 && k > 0; i--,k--)
 		bin[i] = '0';
@@ -26,6 +28,7 @@ char *leftShift(char *bin, int k)
 
 int toInt(char *bits)
 {
+	// if bits[0] == 1 -> the decimal result will be with minus sign
 	int result = 0;
 	int shift = 1;
 	int neg = (bits[0] == '1') ? 1 : 0;
