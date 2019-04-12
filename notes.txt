@@ -106,7 +106,7 @@ Bit Manipulation
 1. & | ~ operations
 2. >> << arithmetic shift
 3. ^ xor
-4. vacant/occupied
+4. vacant/occupied place
 5. clearPlace
 6. setPlace
 7. updatePlace
@@ -119,10 +119,34 @@ Bit Manipulation
 14. rightmostCar
 15. longestSequence
 16. bit array
-17.
-18.
-19.
+17. song
+18. if a and b equal
+19. unique can
 20.
+
+
+Resources:
+(0) Binary Arithmetic https://www.tutorialspoint.com/computer_logical_organization/binary_arithmetic.htm
+(1) Bitwise Operators in C https://www.tutorialspoint.com/cprogramming/c_bitwise_operators.htm
+    Bitwise Operators in C  http://www2.mta.ac.il/~hbinsky/c%20content/Bits.pdf
+    Bitwise Operators in C Programming https://www.programiz.com/c-programming/bitwise-operators
+(2)
+When shifting left, there is no difference between arithmetic and logical shift. When shifting right, the type of shift depends on the type of the value being shifted.
+
+Logical Shift
+A Left Logical Shift of one position moves each bit to the left by one. The vacant least significant bit (LSB) is filled with zero and the most significant bit (MSB) is discarded.
+A Right Logical Shift of one position moves each bit to the right by one. The least significant bit is discarded and the vacant MSB is filled with zero.
+
+Arithmetic Shift
+A Left Arithmetic Shift of one position moves each bit to the left by one. The vacant least significant bit (LSB) is filled with zero and the most significant bit (MSB) is discarded. It is identical to Left Logical Shift.
+A Right Arithmetic Shift of one position moves each bit to the right by one. The least significant bit is discarded and the vacant MSB is filled with the value of the previous (now shifted one position to the right) MSB.
+Shift Right Arithmetic http://chortle.ccsu.edu/assemblytutorial/Chapter-14/ass14_13.html
+
+Are the shift operators (<<, >>) arithmetic or logical in C? https://stackoverflow.com/questions/7622/are-the-shift-operators-arithmetic-or-logical-in-c
+
+(3) xor
+The result of bitwise XOR operator is 1 if the corresponding bits of two operands are opposite. It is denoted by ^.
+
 
 ================================================================================================================
 ================================================ Day 05 ========================================================
