@@ -7,3 +7,6 @@ int			rightmostCar(unsigned int parkingRow)
 		return log2(parkingRow&-parkingRow);
 	return -1;
 }
+
+
+// ffs() - find first or last bit set in a bit string
