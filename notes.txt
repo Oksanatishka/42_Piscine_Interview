@@ -58,14 +58,14 @@ Lists, Stacks and Queues
 
 Exercises:
 0. circular doubly linked list
-1. implement a function that prints all the elements of a linked list in reverse order
-2. implement a stack with methods: stackInit, pop, push (recreate the function printReverse but iteratively)
-3. implement a stack (defined below), but for this time, the "pop" and "push" function must be in O(1) time and O(1) space
+1. (recursion) implement a function that prints all the elements of a linked list in reverse order
+2. (iteratively) implement a stack with methods: stackInit, pop, push (recreate the function printReverse but iteratively)
+3. implement a stack, but for this time, the "pop" and "push" function must be in O(1) time and O(1) space
 4. implement queue with methods: queueInit(), enqueue(queue, message), dequeue(queue), peek(queue), isEmpty(queue).
 5. implement a tank stack
 6. implement a f-n that returns the n-th elements from the end of a linked list(Your function must go through the list only one time).
-7. game: implement a function that returns a copy of the board, with the linked list passed as a parameter.
-8. game
+7. (not implemented) game: implement a function that returns a copy of the board, with the linked list passed as a parameter.
+8. (not implemented) game
 
 
 ================================================================================================================
@@ -90,12 +90,19 @@ Sort Algorithms
 Trees and Graphs
 
 0. binary tree - is it BST? - is it balanced?
-1. balanced BST
+1. (divide and conquer approach) balanced BST
 2. n-ary tree -> create a f-n which returns a first common ancestor
 3. create a f-n able to switch a min-heap to a max-heap
 4. create a f-n to insert a new ape in the tree
-5. prefix tree
+5. (not implemented) prefix tree
 
+(0)
+Binary Search Tree is a node-based binary tree data structure which has the following properties:
+    The left subtree of a node contains only nodes with keys lesser than the node’s key.
+    The right subtree of a node contains only nodes with keys greater than the node’s key.
+    The left and right subtree each must also be a binary search tree.
+
+BST is considered balanced when the difference between heights of the left subtree and right subtree is not more than 1.
 
 ================================================================================================================
 ================================================ Day 04 ========================================================
