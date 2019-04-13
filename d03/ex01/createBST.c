@@ -25,7 +25,7 @@ struct s_node *sortedArrayToBST(int arr[], int start, int end)
 
 struct s_node *createBST(int *arr, int n)
 {
-	struct s_node *node = NULL;
+	struct s_node *node = NULL;	// !! remove this row - otherwise the program won't compile
 
 	if (n <= 0)
 		return NULL;
