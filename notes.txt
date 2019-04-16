@@ -63,7 +63,7 @@ Exercises:
 3. implement a stack, but for this time, the "pop" and "push" function must be in O(1) time and O(1) space
 4. implement queue with methods: queueInit(), enqueue(queue, message), dequeue(queue), peek(queue), isEmpty(queue).
 5. implement a tank stack
-6. implement a f-n that returns the n-th elements from the end of a linked list(Your function must go through the list only one time).
+6. (!! add resource file) implement a f-n that returns the n-th elements from the end of a linked list(Your function must go through the list only one time).
 7. (not implemented) game: implement a function that returns a copy of the board, with the linked list passed as a parameter.
 8. (not implemented) game
 
@@ -90,8 +90,8 @@ Sort Algorithms
 Trees and Graphs
 
 0. binary tree - is it BST? - is it balanced?
-1. (divide and conquer approach) balanced BST
-2. n-ary tree -> create a f-n which returns a first common ancestor
+1. (!! not compiled)(divide and conquer approach) balanced BST
+2. (!! add resource file) n-ary tree -> create a f-n which returns a first common ancestor
 3. create a f-n able to switch a min-heap to a max-heap
 4. create a f-n to insert a new ape in the tree
 5. (not implemented) prefix tree
@@ -113,7 +113,7 @@ Bit Manipulation
 1. & | ~ operations
 2. >> << arithmetic shift
 3. ^ xor
-4. vacant/occupied place
+4. (mistake in leftshift) vacant/occupied place
 5. clearPlace
 6. setPlace
 7. updatePlace
@@ -125,7 +125,7 @@ Bit Manipulation
 13. leftmostCar
 14. rightmostCar
 15. longestSequence
-16. bit array
+16. (!! add resource file - song1.piano) bit array
 17. song
 18. if a and b equal
 19. unique can
@@ -160,38 +160,38 @@ The result of bitwise XOR operator is 1 if the corresponding bits of two operand
 ================================================================================================================
 Recursive programming
 
-0.
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
+0. dynamic array of integers
+1. (!! add resource file)
+2. (!! add resource file)
+3. (!! add resource file, didn't understand the subject) matrix of integer map, int row and int column
+4. string permutation
+5. string permutation without duplicates (using hash table)
+6. (!! add resource file)
+7. (not implemented) palindrome
+8. (not implemented)
 
 ================================================================================================================
 ================================================ Day 06 ========================================================
 ================================================================================================================
 Greedy Algoritms
 
-0.
-1.
-2.
-3.
-4.
-5.
-6.
+0. probability algorithm
+1. (!! add resource file) selecting wifi hotspots
+2. roulette - probability using recursion
+3. probability
+4. probability (use dynamic programming)
+5. (!! wrong results) probability
+6. (not implemented) given a graph, use greedy approach
 
 ================================================================================================================
 ================================================ Day 07 ========================================================
 ================================================================================================================
 Algorithms
 
-0. heap sort
+0. (!! add resource file) heap sort
 1. deque data structure 
 2. balanced BST
-3. undirected graph, queue
-4. 
-5.
+3. (!! add resource file) undirected graph, queue
+4. (!!!!! the program does not compile, add resource file ) graph
+5. (not implemented)(!! add resource file)
 
